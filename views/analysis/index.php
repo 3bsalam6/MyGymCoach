@@ -4,7 +4,7 @@
 
   <!-- Page Header -->
   <div class="mb-24">
-    <h2 style="font-size:1.5rem;font-weight:800">AI Coach 🤖</h2>
+    <h2 style="font-size:1.5rem;font-weight:800">AI Coach</h2>
     <p class="text-secondary text-sm" style="margin-top:4px">Machine learning analysis of your training plan and balance</p>
   </div>
 
@@ -25,25 +25,33 @@
   <!-- Analysis Grid -->
   <div class="stats-grid mb-24">
     <div class="stat-card animate-fade-in">
-      <div class="stat-icon green">✅</div>
+      <div class="stat-icon green">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
       <div class="stat-value text-success">Good</div>
       <div class="stat-label">Push/Pull Balance</div>
       <p class="text-xs text-muted mt-8">Push and pull volumes are within 10% of each other. Great job!</p>
     </div>
     <div class="stat-card animate-fade-in">
-      <div class="stat-icon red">⚠️</div>
+      <div class="stat-icon red">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
       <div class="stat-value text-warning">Imbalanced</div>
       <div class="stat-label">Upper / Lower Ratio</div>
       <p class="text-xs text-muted mt-8">Upper body volume is 40% higher than lower body. Consider adding more leg work.</p>
     </div>
     <div class="stat-card animate-fade-in">
-      <div class="stat-icon amber">📊</div>
+      <div class="stat-icon amber">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
       <div class="stat-value text-warning">Moderate</div>
       <div class="stat-label">Recovery Score</div>
       <p class="text-xs text-muted mt-8">Some muscle groups are being trained before full recovery. Watch chest and quads.</p>
     </div>
     <div class="stat-card animate-fade-in">
-      <div class="stat-icon blue">📈</div>
+      <div class="stat-icon blue">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      </div>
       <div class="stat-value text-accent">On Track</div>
       <div class="stat-label">Progressive Overload</div>
       <p class="text-xs text-muted mt-8">You're consistently increasing volume or weight. Keep it up!</p>
@@ -83,7 +91,7 @@
             $pct = ($m['sets'] / $maxSets) * 100;
             $isLow = $m['sets'] < $m['min'];
             $isHigh = $m['sets'] > $m['max'];
-            $status = $isLow ? 'Low ↓' : ($isHigh ? 'High ↑' : 'Good ✓');
+            $status = $isLow ? 'Below target' : ($isHigh ? 'Above target' : 'On target');
             $statusColor = $isLow ? 'var(--danger)' : ($isHigh ? 'var(--warning)' : 'var(--success)');
           ?>
           <div>
@@ -130,28 +138,28 @@
         </div>
         <div style="display:flex;flex-direction:column;gap:16px">
           <div style="display:flex;gap:12px;padding:16px;background:var(--danger-light);border-radius:var(--radius-sm)">
-            <span style="font-size:1.2rem;flex-shrink:0">🔴</span>
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--danger);margin-top:6px;flex-shrink:0"></div>
             <div>
               <div class="font-semibold text-sm" style="margin-bottom:2px">Increase Calf Training</div>
               <p class="text-xs text-secondary">Your calves are receiving only 6 sets/week, below the minimum recommended 8 sets. Add 2-4 more sets of calf raises to your leg days.</p>
             </div>
           </div>
           <div style="display:flex;gap:12px;padding:16px;background:var(--warning-light);border-radius:var(--radius-sm)">
-            <span style="font-size:1.2rem;flex-shrink:0">🟡</span>
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--warning);margin-top:6px;flex-shrink:0"></div>
             <div>
               <div class="font-semibold text-sm" style="margin-bottom:2px">Balance Upper/Lower Volume</div>
               <p class="text-xs text-secondary">Your upper body receives 70 sets/week vs 36 sets for lower body. Consider adding an extra leg day or increasing sets on existing leg days.</p>
             </div>
           </div>
           <div style="display:flex;gap:12px;padding:16px;background:var(--warning-light);border-radius:var(--radius-sm)">
-            <span style="font-size:1.2rem;flex-shrink:0">🟡</span>
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--warning);margin-top:6px;flex-shrink:0"></div>
             <div>
               <div class="font-semibold text-sm" style="margin-bottom:2px">Add Hamstring Work</div>
               <p class="text-xs text-secondary">Hamstrings are at the minimum threshold (8 sets). For balanced leg development, aim for 10-12 sets. Try adding Romanian Deadlifts or Leg Curls.</p>
             </div>
           </div>
           <div style="display:flex;gap:12px;padding:16px;background:var(--success-light);border-radius:var(--radius-sm)">
-            <span style="font-size:1.2rem;flex-shrink:0">🟢</span>
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--success);margin-top:6px;flex-shrink:0"></div>
             <div>
               <div class="font-semibold text-sm" style="margin-bottom:2px">Great Progressive Overload</div>
               <p class="text-xs text-secondary">Your weights and/or reps have been increasing consistently over the last 4 weeks on major lifts. This is excellent for muscle growth.</p>
@@ -230,7 +238,7 @@
           </div>
         </div>
         <div class="mt-16">
-          <p class="text-xs text-muted">💡 Consider adding a 2nd leg day for better balance.</p>
+          <p class="text-xs text-muted">Consider adding a 2nd leg day for better balance.</p>
         </div>
       </div>
 
@@ -239,7 +247,7 @@
         <div class="text-center">
           <p class="text-sm text-muted mb-16">Analysis is based on your logged workouts. Log more data for better accuracy.</p>
           <button class="btn btn-primary btn-block" onclick="showToast('Re-analyzing your plan...', 'info')">
-            🔄  Re-Analyze Plan
+            Re-Analyze Plan
           </button>
         </div>
       </div>

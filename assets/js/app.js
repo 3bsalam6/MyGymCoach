@@ -1,11 +1,11 @@
 /**
  * MyGymCoach — Main Application JavaScript
- * Handles: Theme toggle, sidebar, navigation, global interactions
+ * Handles: Theme toggle, mobile nav, navigation, global interactions
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
-  initSidebar();
+  initMobileNav();
   initAnimations();
 });
 
@@ -27,35 +27,27 @@ function toggleTheme() {
 }
 
 function updateThemeIcon(theme) {
-  const icons = document.querySelectorAll('.theme-icon');
-  icons.forEach(icon => {
-    icon.textContent = theme === 'dark' ? '☀️' : '🌙';
-  });
-  const labels = document.querySelectorAll('.theme-label');
-  labels.forEach(label => {
-    label.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
-  });
+  // SVG-based icons are handled by CSS [data-theme] selectors
+  // No emoji updates needed
 }
 
 /* =============================================
-   Sidebar (Mobile)
+   Mobile Navigation
    ============================================= */
-function initSidebar() {
-  const menuBtn = document.querySelector('.mobile-menu-btn');
-  const sidebar = document.querySelector('.sidebar');
-  const overlay = document.querySelector('.sidebar-overlay');
+function initMobileNav() {
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('navbar-mobile-menu');
 
-  if (menuBtn) {
+  if (menuBtn && mobileMenu) {
     menuBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-      overlay?.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
     });
-  }
 
-  if (overlay) {
-    overlay.addEventListener('click', () => {
-      sidebar.classList.remove('open');
-      overlay.classList.remove('active');
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+      }
     });
   }
 }
@@ -140,7 +132,7 @@ function addExercise() {
             </select>
           </div>
         </div>
-        <button class="btn btn-ghost btn-sm" onclick="removeExercise(${exerciseCount})" title="Remove exercise">✕</button>
+        <button class="btn btn-ghost btn-sm" onclick="removeExercise(${exerciseCount})" title="Remove exercise">&#x2715;</button>
       </div>
 
       <div class="sets-grid">
@@ -158,7 +150,7 @@ function addExercise() {
       </div>
 
       <button class="btn btn-ghost btn-sm mt-8" onclick="addSet(${exerciseCount})">
-        ＋ Add Set
+        + Add Set
       </button>
     </div>
   `;
@@ -173,7 +165,7 @@ function generateSetRow(exerciseId, setNum) {
       <input type="number" class="form-input" placeholder="0" min="0" step="0.5">
       <input type="number" class="form-input" placeholder="0" min="0">
       <input type="number" class="form-input" placeholder="—" min="1" max="10" step="0.5">
-      <button class="btn btn-ghost btn-icon btn-sm" onclick="removeSet('set-${exerciseId}-${setNum}')" title="Remove set" style="font-size:0.8rem;color:var(--text-muted)">✕</button>
+      <button class="btn btn-ghost btn-icon btn-sm" onclick="removeSet('set-${exerciseId}-${setNum}')" title="Remove set" style="font-size:0.8rem;color:var(--text-muted)">&#x2715;</button>
     </div>
   `;
 }
@@ -259,7 +251,7 @@ function showToast(message, type = 'success') {
     color: white;
   `;
   toast.innerHTML = `
-    <span>${type === 'success' ? '✓' : type === 'error' ? '✕' : 'ℹ'}</span>
+    <span>${type === 'success' ? '&#10003;' : type === 'error' ? '&#x2715;' : 'i'}</span>
     <span>${message}</span>
   `;
 

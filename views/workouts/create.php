@@ -9,7 +9,7 @@
       <p class="text-secondary text-sm" style="margin-top:4px">Record your exercises, sets, reps, and weights</p>
     </div>
     <a href="index.php?page=workouts" class="btn btn-ghost">
-      ← Back to Workouts
+      &larr; Back to Workouts
     </a>
   </div>
 
@@ -67,7 +67,8 @@
   <div class="flex items-center justify-between mb-16">
     <h3 class="font-bold">Exercises</h3>
     <button class="btn btn-primary btn-sm" onclick="addExercise()">
-      ➕ Add Exercise
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Add Exercise
     </button>
   </div>
 
@@ -78,11 +79,13 @@
   <!-- Empty State (shown when no exercises added) -->
   <div class="card" id="empty-exercises-state">
     <div class="empty-state">
-      <div class="empty-icon">🏋️</div>
+      <div class="empty-icon">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v16M18 4v16M6 12h12M4 8h4M4 16h4M16 8h4M16 16h4"/></svg>
+      </div>
       <div class="empty-title">No exercises added yet</div>
       <div class="empty-desc">Click "Add Exercise" to start building your workout. Select from our exercise library and log your sets, reps, and weights.</div>
       <button class="btn btn-primary" onclick="addExercise(); document.getElementById('empty-exercises-state').style.display='none';">
-        ➕ Add First Exercise
+        Add First Exercise
       </button>
     </div>
   </div>
@@ -105,7 +108,7 @@
         Save Draft
       </button>
       <button class="btn btn-primary btn-lg" onclick="saveWorkout()">
-        ✓  Save Workout
+        Save Workout
       </button>
     </div>
   </div>
@@ -145,7 +148,7 @@
     }
 
     // In the future, this will POST to the backend
-    showToast('Workout saved successfully! 💪', 'success');
+    showToast('Workout saved successfully!', 'success');
     setTimeout(() => {
       window.location.href = 'index.php?page=workouts';
     }, 1500);

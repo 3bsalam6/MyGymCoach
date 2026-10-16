@@ -6,7 +6,7 @@
   <!-- Greeting -->
   <div class="mb-24">
     <h2 style="font-size:1.5rem;font-weight:800">
-      <span id="greeting-text">Good evening</span>, Ahmed 👋
+      <span id="greeting-text">Good evening</span>, Ahmed
     </h2>
     <p class="text-secondary" style="margin-top:4px">Here's your training overview for this week</p>
   </div>
@@ -14,28 +14,36 @@
   <!-- Stats Grid -->
   <div class="stats-grid">
     <div class="stat-card stagger-item">
-      <div class="stat-icon blue">🏋️</div>
+      <div class="stat-icon blue">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v16M18 4v16M6 12h12M4 8h4M4 16h4M16 8h4M16 16h4"/></svg>
+      </div>
       <div class="stat-value">12</div>
       <div class="stat-label">Workouts This Month</div>
-      <div class="stat-change up">↑ 20% vs last month</div>
+      <div class="stat-change up">+20% vs last month</div>
     </div>
     <div class="stat-card stagger-item">
-      <div class="stat-icon amber">⚡</div>
+      <div class="stat-icon amber">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </div>
       <div class="stat-value" id="total-weekly-sets">118</div>
       <div class="stat-label">Total Weekly Sets</div>
-      <div class="stat-change up">↑ 8 more sets</div>
+      <div class="stat-change up">+8 more sets</div>
     </div>
     <div class="stat-card stagger-item">
-      <div class="stat-icon green">🏆</div>
+      <div class="stat-icon green">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+      </div>
       <div class="stat-value">5</div>
       <div class="stat-label">Personal Records</div>
-      <div class="stat-change up">↑ 2 new PRs!</div>
+      <div class="stat-change up">+2 new PRs</div>
     </div>
     <div class="stat-card stagger-item">
-      <div class="stat-icon red">🔥</div>
+      <div class="stat-icon red">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
       <div class="stat-value">6</div>
       <div class="stat-label">Day Streak</div>
-      <div class="stat-change up">Keep it up!</div>
+      <div class="stat-change up">Keep it up</div>
     </div>
   </div>
 
@@ -68,7 +76,7 @@
             </div>
           </div>
 
-          <!-- Intensity Legend (Blue Gradient: High → Low) -->
+          <!-- Intensity Legend (Blue Gradient: High to Low) -->
           <div class="intensity-legend" style="margin-top:20px">
             <span class="text-sm font-semibold" style="color:var(--text-secondary)">High</span>
             <div style="display:flex;gap:2px;margin:0 8px">
@@ -109,10 +117,10 @@
         </div>
         <div class="flex flex-col gap-8">
           <a href="index.php?page=workouts&action=create" class="btn btn-primary btn-block">
-            ➕  Log New Workout
+            Log New Workout
           </a>
           <a href="index.php?page=analysis" class="btn btn-outline btn-block">
-            🤖  Analyze My Plan
+            Analyze My Plan
           </a>
         </div>
       </div>
@@ -121,35 +129,35 @@
       <div class="card mb-16">
         <div class="card-header">
           <h3 class="card-title">Recent Workouts</h3>
-          <a href="index.php?page=workouts" class="text-sm">View all →</a>
+          <a href="index.php?page=workouts" class="text-sm">View all &rarr;</a>
         </div>
         <div class="activity-list">
           <div class="activity-item stagger-item">
             <div class="activity-dot" style="background:var(--danger)"></div>
             <div class="activity-content">
               <div class="activity-text"><strong>Push Day</strong> — Chest, Shoulders, Triceps</div>
-              <div class="activity-time">Today • 6 exercises • 22 sets</div>
+              <div class="activity-time">Today &middot; 6 exercises &middot; 22 sets</div>
             </div>
           </div>
           <div class="activity-item stagger-item">
             <div class="activity-dot" style="background:var(--success)"></div>
             <div class="activity-content">
               <div class="activity-text"><strong>Leg Day</strong> — Quads, Hamstrings, Calves</div>
-              <div class="activity-time">Yesterday • 5 exercises • 20 sets</div>
+              <div class="activity-time">Yesterday &middot; 5 exercises &middot; 20 sets</div>
             </div>
           </div>
           <div class="activity-item stagger-item">
             <div class="activity-dot" style="background:var(--accent)"></div>
             <div class="activity-content">
               <div class="activity-text"><strong>Pull Day</strong> — Back, Biceps</div>
-              <div class="activity-time">2 days ago • 6 exercises • 24 sets</div>
+              <div class="activity-time">2 days ago &middot; 6 exercises &middot; 24 sets</div>
             </div>
           </div>
           <div class="activity-item stagger-item">
             <div class="activity-dot"></div>
             <div class="activity-content">
               <div class="activity-text"><strong>Upper Body</strong> — Chest, Shoulders, Arms</div>
-              <div class="activity-time">4 days ago • 7 exercises • 26 sets</div>
+              <div class="activity-time">4 days ago &middot; 7 exercises &middot; 26 sets</div>
             </div>
           </div>
         </div>
@@ -158,28 +166,28 @@
       <!-- Personal Records -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Recent PRs 🏆</h3>
+          <h3 class="card-title">Recent PRs</h3>
         </div>
         <div class="activity-list">
           <div class="activity-item stagger-item">
             <div class="activity-dot" style="background:var(--accent-warm)"></div>
             <div class="activity-content">
-              <div class="activity-text"><strong>Bench Press</strong> — 100 kg × 1</div>
-              <div class="activity-time">New 1RM! • Today</div>
+              <div class="activity-text"><strong>Bench Press</strong> — 100 kg x 1</div>
+              <div class="activity-time">New 1RM &middot; Today</div>
             </div>
           </div>
           <div class="activity-item stagger-item">
             <div class="activity-dot" style="background:var(--accent-warm)"></div>
             <div class="activity-content">
-              <div class="activity-text"><strong>Squat</strong> — 140 kg × 1</div>
-              <div class="activity-time">New 1RM! • Yesterday</div>
+              <div class="activity-text"><strong>Squat</strong> — 140 kg x 1</div>
+              <div class="activity-time">New 1RM &middot; Yesterday</div>
             </div>
           </div>
           <div class="activity-item stagger-item">
             <div class="activity-dot" style="background:var(--accent-warm)"></div>
             <div class="activity-content">
-              <div class="activity-text"><strong>Deadlift</strong> — 160 kg × 3</div>
-              <div class="activity-time">Volume PR • 3 days ago</div>
+              <div class="activity-text"><strong>Deadlift</strong> — 160 kg x 3</div>
+              <div class="activity-time">Volume PR &middot; 3 days ago</div>
             </div>
           </div>
         </div>
